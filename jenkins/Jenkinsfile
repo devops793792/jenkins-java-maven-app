@@ -1,5 +1,8 @@
-pipeline {
+    pipeline {
     agent any
+    environment {
+        ARTIFACTORY_ACCESS_TOKEN = credentials('JFrog-Access-Token')
+    }
     tools {
         maven 'maven'
     }
@@ -19,9 +22,9 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
+        stage('Uplpoad artifact to jfrog') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh 'jf rt upload --url https://jfrog71.jfrog.io/artifactory/ --access-token ${JFrog-Access-Token} /var/lib/cloudbees-core-cm/workspace/jenkins-java-maven-app-pipeline/target/my-app-1.0-SNAPSHOT.jar java-maven-app-maven-remote/'
             }
         }
     }
