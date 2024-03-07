@@ -24,7 +24,7 @@
         }
         stage('Uplpoad artifact to jfrog') {
             steps {
-                sh 'jf rt upload --url https://jfrog71.jfrog.io/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} /var/lib/cloudbees-core-cm/workspace/jenkins-java-maven-app-pipeline/target/my-app-1.0-SNAPSHOT.jar java-maven-app-maven-remote/'
+                sh 'jf rt upload --url https://jfrog71.jfrog.io/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} /var/lib/cloudbees-core-cm/workspace/jenkins-java-maven-app-pipeline/target/my-app-1.0-SNAPSHOT.jar java-maven-app-maven/'
             }
         }
     }
