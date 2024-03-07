@@ -24,7 +24,7 @@
         }
         stage('Uplpoad artifact to jfrog') {
             steps {
-                sh 'jf rt upload --url https://jfrog71.jfrog.io/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} ./*.jar java-web-app/'
+                sh 'jf rt upload --url https://jfrog71.jfrog.io/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} ./*.jar java-web-app'
             }
         }
     }
