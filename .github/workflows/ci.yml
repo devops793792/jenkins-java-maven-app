@@ -150,7 +150,7 @@ jobs:
   #     run: |
   #       kubectl apply -f ds.yml
 
-    deploy_to_kubernetes:
+  deploy_to_kubernetes:
     runs-on: ubuntu-latest # OIDC works best on GitHub-hosted, but supports ubuntu-latest
     needs: buils_docker_image_and_push
     permissions:
